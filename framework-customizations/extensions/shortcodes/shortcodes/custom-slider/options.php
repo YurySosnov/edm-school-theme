@@ -28,6 +28,10 @@ $options = array(
                 'type'  => 'upload',
                 'label' => __('Alternative Image', 'fw')
             ),
+            'img_hover'   => array(
+                'type'  => 'upload',
+                'label' => __('Hover Image', 'fw')
+            ),
             'video'   => array(
                 'type'  => 'wp-editor',
                 'label' => __('Video', 'fw')
