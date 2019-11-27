@@ -14,3 +14,4 @@
 
 get_header('homepage');
 get_template_part( 'template-parts/content', 'homepage' );
+get_footer( 'homepage' );

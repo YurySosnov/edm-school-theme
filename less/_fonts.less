@@ -31,9 +31,11 @@
     .font-src('Montserrat','Montserrat-Black.ttf');
 }
 
-.font-mns(@type:Regular,@size:none,@weight:none) {
+.font-mns(@type:Regular,@size:none,@weight:none,@family-important:none) {
     & when not(@size = none) { font-size: @size; }
     & when not(@weight = none) { font-weight: @weight; }
+    & when not (@family-important = none) {font-family: '@{font-name}' !important;}
+    & when (@family-important = none) {font-family: '@{font-name}';}
     .font-name('Montserrat-',@type);
-    font-family: '@{font-name}';
+
 }

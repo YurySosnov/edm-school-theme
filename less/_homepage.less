@@ -180,14 +180,145 @@
     .zag {
         color: #fff;
     }
+    &.vk {
+        text-align: left;
+        padding-top: 50px;
+        padding-bottom: 60px;
+        .zag-left {
+            .font-mns('Black',26px);
+            text-transform: uppercase;
+        }
+        .right-text {
+            margin-top: 10px;
+            text-align: center;
+        }
+        p {
+            font-size: 14px;
+        }
+    }
 }
 
 /* TEACHERS SLIDER */
 
-.homepage-section-teachers-slider {
+.homepage-section-teachers-title {
     padding-top: 80px;
-    padding-bottom: 20px;
+    padding-bottom: 16px;
     .zag {
         color: #fff;
+        margin-bottom: 0px;
     }
+}
+
+.homepage-section-teachers-slider-1 {
+    overflow: hidden;
+}
+
+.djlist-left,
+.djlist-right {
+    width: 23px;
+    height: 47px;
+    background-size: cover;
+    position: absolute;
+    top: 50px;
+    cursor: pointer;
+    background-repeat: no-repeat;
+}
+
+.djlist-left {
+    background-image: url('../img/str-left.png');
+    left: -50px;
+}
+
+.djlist-right {
+    background-image: url('../img/str-right.png');
+    right: -50px;
+}
+
+.dj-slider-top .ava {
+    width: 100%;
+    min-height: 140px;
+    background-color: #999;
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+    transition: all 0.2s ease-out;
+}
+
+.dj-slider-bottom {
+    .item {
+        .img {
+            background-repeat: no-repeat;
+            background-position: center;
+            width: 100%;
+            height: 500px;
+            background-size: cover;
+        }
+        .text {
+            padding: 30px 10px;
+            .title {
+                font-size: 24px;
+                color: #989898;
+            }
+            .name {
+                font-size: 40px;
+                color: #000;
+            }
+        }
+    }
+    .but {
+        width: 23px;
+        height: 47px;
+        cursor: pointer;
+        transition: all 0.2s ease-out;
+        float: right;
+        margin: 50px 10px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        &.left {
+            background-image: url('../img/str-left.png');
+        }
+        &.right {
+            background-image: url('../img/str-right.png');
+        }
+    }
+}
+
+#tb-notification-widget-inner.tb-notification-widget-inner .tb-widget-buttons.tb-btn-style-rounded a {
+    width: 280px !important;
+    max-width: 100% !important;
+    height: 10px !important;
+    border: none !important;
+    background: linear-gradient(to top, #fe186d, #dc0656) !important;
+    border-bottom: 3px solid #b70547 !important;
+    text-align: center !important;
+    box-shadow: 0px 0px 40px rgba(249, 21, 105, 0.7) !important;
+    animation: shadow 2s infinite ease-in-out !important;
+    cursor: pointer !important;
+    border-radius: 5px !important;
+    padding-top: 20px !important;
+    padding-bottom: 35px !important;
+    float: left !important;
+    margin-right: 20px !important;
+    font-size: 14px !important;
+    .font-mns('SemiBold',@family-important:true);
+}
+
+#tb-notification-button-0 {
+    width: 200px;
+}
+
+tb-notification-button__text {
+    font-size: 0;
+    &:after {
+        display: inline;
+        content: 'Получить видеоурок';
+        color: #fff;
+        font-size: 14px;
+    }
+}
+
+.otzivi {
+    background-color: #141352;
+    padding-top: 80px;
+    padding-bottom: 80px;
 }

@@ -1,6 +1,6 @@
 $(function() {
     /* START DJLIST SLIDER */
-    $('.owl-carousel.djlist').owlCarousel({
+    $('.dj-slider-top .owl-carousel').owlCarousel({
         loop: true,
         margin: 10,
         responsiveClass: true,
@@ -27,11 +27,43 @@ $(function() {
         }
     });
 
-    $('.djlist-left').click(function () {
+    $('.dj-slider-top .djlist-left').click(function () {
         $('.owl-carousel.djlist .owl-prev').trigger('click');
     });
 
-    $('.djlist-right').click(function () {
+    $('.dj-slider-top .djlist-right').click(function () {
         $('.owl-carousel.djlist .owl-next').trigger('click');
     });
+
+    $(".dj-slider-bottom .owl-carousel").owlCarousel({
+        loop: true,
+        margin: 10,
+        responsiveClass: true,
+        URLhashListener:true,
+        autoplayHoverPause:true,
+        startPosition: 'URLHash',
+        dots: false,
+        responsive: {
+            0: {
+                items: 1,
+                nav: false
+            },
+            600: {
+                items: 1,
+                nav: false
+            },
+            1000: {
+                items: 1,
+                nav: false
+            }
+        }
+    });
+    $(".dj-slider-bottom .left").click(function() {
+        $('.dj-slider-bottom .owl-prev').trigger('click');
+    });
+
+    $(".dj-slider-bottom .right").click(function() {
+        $('.dj-slider-bottom .owl-next').trigger('click');
+    });
+
 });

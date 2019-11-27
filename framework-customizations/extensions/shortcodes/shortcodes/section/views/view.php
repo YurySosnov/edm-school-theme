@@ -68,16 +68,16 @@ if ( $atts['inner_area'] ) {
 ?>
 <section class="fw-main-row<?php echo esc_attr($section_extra_classes) ?>" <?php echo $section_style; ?> <?php echo $bg_video_data_attr; ?>>
     <?php if ( isset( $atts['background_video_url'] ) && $atts['background_video_url'] !== '' ) : ?>
-    <video class="section-background-video"<?php echo $html_video_parameters; ?><?php echo $video_styles; ?>>
-        <source src="<?php echo $atts['background_video_url']; ?>" type="video/mp4">
-    </video>
+        <video class="section-background-video"<?php echo $html_video_parameters; ?><?php echo $video_styles; ?>>
+            <source src="<?php echo $atts['background_video_url']; ?>" type="video/mp4">
+        </video>
     <?php endif; ?>
     <?php if ( $atts['overlay'] ): ?>
-    <div class="section-overlay" <?php echo $overlay_style; ?>></div>
+        <div class="section-overlay" <?php echo $overlay_style; ?>></div>
     <?php endif; ?>
 
     <?php if ( $atts['inner_area'] ): ?>
-    <<?php echo $atts['inner_area_tag']; ?><?php echo $inner_area_parameters; ?>>
+        <<?php echo $atts['inner_area_tag']; ?><?php echo $inner_area_parameters; ?>>
     <?php endif; ?>
 	<div class="<?php echo esc_attr($container_class); ?>">
 		<?php echo do_shortcode( $content ); ?>
