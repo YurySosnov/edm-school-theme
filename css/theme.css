@@ -1,0 +1,291 @@
+@font-face {
+  font-family: 'Montserrat-Light';
+  src: url('../fonts/Montserrat/Montserrat-Light.ttf');
+}
+@font-face {
+  font-family: 'Montserrat-Regular';
+  src: url('../fonts/Montserrat/Montserrat-Regular.ttf');
+}
+@font-face {
+  font-family: 'Montserrat-Medium';
+  src: url('../fonts/Montserrat/Montserrat-Medium.ttf');
+}
+@font-face {
+  font-family: 'Montserrat-SemiBold';
+  src: url('../fonts/Montserrat/Montserrat-SemiBold.ttf');
+}
+@font-face {
+  font-family: 'Montserrat-Bold';
+  src: url('../fonts/Montserrat/Montserrat-Bold.ttf');
+}
+@font-face {
+  font-family: 'Montserrat-Black';
+  src: url('../fonts/Montserrat/Montserrat-Black.ttf');
+}
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+}
+body {
+  font-weight: 300;
+  font-family: 'Montserrat-Regular';
+}
+h1,
+h2,
+h3,
+h4,
+strong {
+  font-family: 'Montserrat-Bold';
+}
+h1 {
+  line-height: 1.2;
+}
+section {
+  background-position: center top;
+  background-size: cover;
+}
+.page {
+  margin: 0;
+}
+.section {
+  position: relative;
+  overflow: hidden;
+}
+.section.full-height {
+  min-height: 100vh;
+}
+.section-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+.section-background-video {
+  min-width: 100%;
+  min-height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.new-class {
+  display: block;
+}
+.col-12 {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+.homepage-section-top-inner img.logo {
+  width: 50%;
+}
+@media screen and (max-width: 768px) {
+  .logo {
+    display: block;
+    margin: 0 auto;
+  }
+  .homepage-section-top-inner .logo {
+    margin-bottom: 20px;
+  }
+}
+img.logo {
+  position: relative;
+}
+img.logo-centered {
+  display: block;
+  margin: 0 auto;
+}
+/* HOMEPAGE SECTION TOP */
+.homepage-section-top {
+  background-image: linear-gradient(to top left, #231563, #2e114b);
+}
+.homepage-section-top-inner {
+  margin: 0 auto;
+  padding-top: 20px;
+}
+.homepage-section-top-phone {
+  text-align: right;
+  color: #fff;
+  font-size: 12px;
+  font-family: 'Montserrat-Regular';
+}
+.homepage-section-top-phone strong {
+  font-size: 18px;
+  font-family: 'Montserrat-Bold';
+}
+.homepage-section-top-phone strong a {
+  text-decoration: none;
+}
+.homepage-section-top-phone strong a:active,
+.homepage-section-top-phone strong a:visited {
+  color: #fff;
+}
+.homepage-section-top-main {
+  text-align: center;
+  margin-top: 20vh;
+  color: #fff;
+}
+.homepage-section-top-main .time {
+  font-size: 30px;
+  font-family: 'Montserrat-SemiBold';
+  margin-bottom: 1rem;
+}
+.homepage-section-top-main .line {
+  width: 390px;
+  margin: -24px auto auto;
+  border-bottom: 10px solid #fe186d;
+  height: 1px;
+}
+.homepage-section-top-main h1 {
+  font-size: 45px;
+  font-family: 'Montserrat-Black';
+  margin: 0 0 8px;
+}
+@media screen and (max-width: 768px) {
+  .homepage-section-top {
+    background-image: url('../img/homepage-top-bg-xs.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+  .homepage-section-top video {
+    display: none;
+  }
+  .homepage-section-top-phone {
+    text-align: center;
+  }
+}
+.stickyDa {
+  padding-top: 5px;
+}
+.homepage-section-top form input,
+.utp form input {
+  margin-bottom: 20px;
+  height: 60px;
+  border: 1px solid #454851;
+  text-align: left;
+  font-size: 16px;
+  font-family: 'Montserrat-Bold';
+  color: #fff;
+  background: none;
+  border-radius: 5px;
+  padding-left: 48px;
+  padding-right: 10px;
+  margin-right: 20px;
+  max-width: 350px;
+  font-weight: 300;
+}
+@keyframes shadow {
+  from {
+    box-shadow: 0 0 40px rgba(249, 21, 105, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 0 rgba(249, 21, 105, 0.7);
+  }
+  to {
+    box-shadow: 0 0 40px rgba(249, 21, 105, 0.7);
+  }
+}
+.homepage-section-top form input[type="submit"],
+.utp form input[type="submit"] {
+  width: 25%;
+  max-width: 100%;
+  height: 60px;
+  border: none;
+  background: linear-gradient(to top, #fe186d, #dc0656);
+  border-bottom: 3px solid #b70547;
+  text-align: center;
+  padding: 0;
+  box-shadow: 0 0 40px rgba(249, 21, 105, 0.7);
+  animation: shadow 2s infinite ease-in-out;
+}
+.homepage-section-top form input[type="submit"]:hover,
+.utp form input[type="submit"]:hover {
+  background: linear-gradient(to top, #dc0656, #fe186d);
+}
+/* HOMEPAGE SECTION DIRECTION */
+.homepage-section-direction {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  background: url('../img/homepage-section-direction-bg.png') left 50px top 50px no-repeat, url('../img/homepage-section-direction-bg-2.png') right 50px bottom 50px no-repeat;
+}
+.zag {
+  font-size: 30px;
+  font-family: 'Montserrat-Black';
+  text-align: center;
+  text-transform: uppercase;
+  color: #000;
+}
+.hp-direction-block {
+  width: 100%;
+  height: 390px;
+  position: relative;
+  margin-bottom: 30px;
+}
+.hp-direction-block .img {
+  width: calc(100% - 40px);
+  height: 350px;
+  background-color: #13124b;
+  position: absolute;
+  z-index: 2;
+  margin-top: 20px;
+  margin-left: 20px;
+  background-size: cover;
+  background-position: left bottom;
+}
+.hp-direction-block .img .bord {
+  display: block;
+  border: 2px solid #f9045f;
+  width: calc(100% - 20px);
+  height: calc(100% - 20px);
+  position: absolute;
+  margin-top: 10px;
+  margin-left: 10px;
+  opacity: 0;
+  transition: all 0.2s ease-out;
+  z-index: 5;
+}
+.hp-direction-block .img .bord:hover {
+  opacity: 1;
+}
+.hp-direction-block .name {
+  position: absolute;
+  z-index: 3;
+  bottom: 20px;
+  width: 100%;
+  min-height: 10px;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 22px;
+  font-family: 'Montserrat-Black';
+  margin-left: 20px;
+}
+.hp-direction-block .bg {
+  width: 80%;
+  height: 390px;
+  position: relative;
+  background-color: #d8d8d8;
+}
+/* UTP SECTION */
+.utp {
+  min-height: 200px;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  text-align: center;
+  color: #fff;
+  position: relative;
+}
+.utp .zag {
+  color: #fff;
+}
+/* TEACHERS SLIDER */
+.homepage-section-teachers-slider {
+  padding-top: 80px;
+  padding-bottom: 20px;
+}
+.homepage-section-teachers-slider .zag {
+  color: #fff;
+}

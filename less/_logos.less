@@ -1,0 +1,25 @@
+.homepage-section-top-inner {
+    img.logo {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: @screen-sm ) {
+    .logo {
+        display: block;
+        margin: 0 auto;
+    }
+    .homepage-section-top-inner {
+        .logo {
+            margin-bottom: 20px;
+        }
+    }
+}
+
+img.logo {
+    position: relative;
+    &-centered {
+        display: block;
+        margin: 0 auto;
+    }
+}

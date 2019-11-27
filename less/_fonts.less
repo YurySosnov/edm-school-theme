@@ -1,0 +1,39 @@
+@fonts-path: '../fonts';
+.font-src(@_font-name,@_file-name) {
+    src: url('@{fonts-path}/@{_font-name}/@{_file-name}');
+}
+.font-name(@_name,@_type) {
+    @font-name: '@{_name}@{_type}';
+}
+
+@font-face {
+    font-family: 'Montserrat-Light';
+    .font-src('Montserrat','Montserrat-Light.ttf');
+}
+@font-face {
+    font-family: 'Montserrat-Regular';
+    .font-src('Montserrat','Montserrat-Regular.ttf');
+}
+@font-face {
+    font-family: 'Montserrat-Medium';
+    .font-src('Montserrat','Montserrat-Medium.ttf');
+}
+@font-face {
+    font-family: 'Montserrat-SemiBold';
+    .font-src('Montserrat','Montserrat-SemiBold.ttf');
+}
+@font-face {
+    font-family: 'Montserrat-Bold';
+    .font-src('Montserrat','Montserrat-Bold.ttf');
+}
+@font-face {
+    font-family: 'Montserrat-Black';
+    .font-src('Montserrat','Montserrat-Black.ttf');
+}
+
+.font-mns(@type:Regular,@size:none,@weight:none) {
+    & when not(@size = none) { font-size: @size; }
+    & when not(@weight = none) { font-weight: @weight; }
+    .font-name('Montserrat-',@type);
+    font-family: '@{font-name}';
+}
