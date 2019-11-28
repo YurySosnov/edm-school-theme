@@ -3,7 +3,7 @@ $cfg = array(
     'page_builder' => array(
         'title'         => __('HTML block', 'fw'),
         'description'   => __('HTML block', 'fw'),
-        'tab'           => __('Content Elements', 'fw'),
+        'tab'           => __('EDM', 'fw'),
         'popup_size'    => 'medium', // can be large, medium or small
         /*
         // Icon examples

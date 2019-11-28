@@ -66,4 +66,37 @@ $(function() {
         $('.dj-slider-bottom .owl-next').trigger('click');
     });
 
+    
+    /* REVIEWS */
+
+    $(".reviews .videos .owl-carousel").owlCarousel({
+        loop: true,
+        margin: 10,
+        responsiveClass: true,
+        responsive: {
+            0: {
+                items: 1,
+                nav: false
+            },
+            768: {
+                items: 2,
+                nav: false
+            },
+            1200: {
+                items: 4,
+                nav: false
+            }
+        }
+    });
+    $(".reviews .videos .left").click(function() {
+        $('.reviews .videos .owl-prev').trigger('click');
+    });
+
+    $(".reviews .videos .right").click(function() {
+        $('.reviews .videos .owl-next').trigger('click');
+    });
+
 });
+
+/* BIG VIDEO */
+

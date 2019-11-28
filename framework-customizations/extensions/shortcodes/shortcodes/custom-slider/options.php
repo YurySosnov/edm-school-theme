@@ -5,7 +5,7 @@ $options = array(
         'type'         => 'addable-popup',
         'label'        => __('Slides', 'fw'),
         'popup-title'   => __( 'Add/Edit Tabs', 'fw' ),
-        'template'      => '{{=s1_title}}',
+        'template'      => '{{=title}}',
         'popup_size'  => 'large',
         'popup-options' => array(
             'title'   => array(
@@ -33,11 +33,11 @@ $options = array(
                 'label' => __('Hover Image', 'fw')
             ),
             'video'   => array(
-                'type'  => 'wp-editor',
+                'type'  => 'text',
                 'label' => __('Video', 'fw')
             ),
             'audio'   => array(
-                'type'  => 'wp-editor',
+                'type'  => 'text',
                 'label' => __('Audio', 'fw')
             ),
         )
@@ -54,6 +54,16 @@ $options = array(
     ),
     'dj_list_slider' => array(
         'label'        => __('DJ Slider', 'fw'),
+        'type'         => 'switch',
+        'value'        => false
+    ),
+    'video' => array(
+        'label'        => __('Videos Slider', 'fw'),
+        'type'         => 'switch',
+        'value'        => false
+    ),
+    'audio' => array(
+        'label'        => __('Audios Slider', 'fw'),
         'type'         => 'switch',
         'value'        => false
     ),

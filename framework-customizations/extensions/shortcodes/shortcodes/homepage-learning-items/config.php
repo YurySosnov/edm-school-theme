@@ -1,7 +1,7 @@
 <?php
 $cfg = array(
     'page_builder' => array(
-        'title'         => __('HP Direction items', 'fw'),
+        'title'         => __('HP Learning items', 'fw'),
         'tab'           => __('EDM', 'fw'),
         'popup_size'    => 'medium', // can be large, medium or small
         /*
