@@ -87,7 +87,26 @@ if ( $atts['audio'] ) {
         </div>
         <?php endforeach; ?>
     </div>
-    <div class="row">
+    <div class="fw-row">
+        <div class="fw-col-12">
+            <div class="left"></div>
+            <div class="right"></div>
+        </div>
+    </div>
+<?php endif; ?>
+<?php if ( $type === 'audio') : ?>
+    <div class="owl-carousel owl-theme">
+        <?php foreach ( fw_akg( 'slides', $atts, array() ) as $slide ) : ?>
+            <div class="item">
+                <div class="fw-row">
+                    <div class="fw-col-sm-12">
+                        <?php echo $slide['audio']; ?>
+                    </div>
+                </div>
+            </div>
+        <?php endforeach; ?>
+    </div>
+    <div class="fw-row">
         <div class="fw-col-12">
             <div class="left"></div>
             <div class="right"></div>

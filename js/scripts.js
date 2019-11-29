@@ -35,7 +35,7 @@ $(function() {
         $('.owl-carousel.djlist .owl-next').trigger('click');
     });
 
-    $(".dj-slider-bottom .owl-carousel").owlCarousel({
+    $('.dj-slider-bottom .owl-carousel').owlCarousel({
         loop: true,
         margin: 10,
         responsiveClass: true,
@@ -58,18 +58,18 @@ $(function() {
             }
         }
     });
-    $(".dj-slider-bottom .left").click(function() {
+    $('.dj-slider-bottom .left').click(function() {
         $('.dj-slider-bottom .owl-prev').trigger('click');
     });
 
-    $(".dj-slider-bottom .right").click(function() {
+    $('.dj-slider-bottom .right').click(function() {
         $('.dj-slider-bottom .owl-next').trigger('click');
     });
 
     
     /* REVIEWS */
 
-    $(".reviews .videos .owl-carousel").owlCarousel({
+    $('.reviews .videos .owl-carousel').owlCarousel({
         loop: true,
         margin: 10,
         responsiveClass: true,
@@ -88,12 +88,41 @@ $(function() {
             }
         }
     });
-    $(".reviews .videos .left").click(function() {
+    $('.reviews .videos .left').click(function() {
         $('.reviews .videos .owl-prev').trigger('click');
     });
 
-    $(".reviews .videos .right").click(function() {
+    $('.reviews .videos .right').click(function() {
         $('.reviews .videos .owl-next').trigger('click');
+    });
+
+    /* WORKS */
+
+    $('.works-slider .owl-carousel').owlCarousel({
+        loop: true,
+        margin: 10,
+        responsiveClass: true,
+        responsive: {
+            0: {
+                items: 1,
+                nav: false
+            },
+            768: {
+                items: 2,
+                nav: false
+            },
+            1200: {
+                items: 3,
+                nav: false
+            }
+        }
+    });
+    $('.works .left').click(function() {
+        $('.works .owl-prev').trigger('click');
+    });
+
+    $('.works .right').click(function() {
+        $('.works .owl-next').trigger('click');
     });
 
 });

@@ -367,20 +367,6 @@ tb-notification-button__text {
     }
     .videos {
         text-align: center;
-        .left, .right {
-            width: 23px;
-            height: 47px;
-            display: inline-block;
-            margin: 10px 25px 0;
-            cursor: pointer;
-            background-size: contain;
-        }
-        .left {
-            background-image: url('../img/str-left.png');
-        }
-        .right {
-            background-image: url('../img/str-right.png');
-        }
         .owl-carousel {
             &:before,
             &:after {
@@ -402,6 +388,24 @@ tb-notification-button__text {
                 right: 0;
             }
         }
+    }
+}
+
+.videos,
+.works {
+    .left, .right {
+        width: 23px;
+        height: 47px;
+        display: inline-block;
+        margin: 30px 25px 0;
+        cursor: pointer;
+        background-size: contain;
+    }
+    .left {
+        background-image: url('../img/str-left.png');
+    }
+    .right {
+        background-image: url('../img/str-right.png');
     }
 }
 
@@ -506,12 +510,10 @@ tb-notification-button__text {
     .but {
         width: 137px;
         height: 137px;
-        margin: auto;
-        margin-top: 10px;
-        margin-bottom: -140px;
+        margin: 10px auto -140px;
         background: url('../img/big-video-button.png') no-repeat center bottom, #18134e;
         border-radius: 100%;
-        box-shadow: 0px 0px 40px rgba(249, 21, 105, 0.7);
+        box-shadow: 0 0 40px rgba(249, 21, 105, 0.7);
         animation: shadow 2s infinite ease-in-out;
         cursor: pointer;
     }
@@ -564,5 +566,49 @@ tb-notification-button__text {
     a, a:visited, a:active, a:focus {
         color: #000;
         text-decoration: none;
+    }
+}
+
+.works {
+    padding: 80px 0;
+    text-align: center;
+    .zag {
+        color: #fff;
+    }
+}
+
+.works-slider {
+    .item {
+        background-color: #0f0f43;
+        padding: 20px;
+    }
+}
+
+.logos {
+    padding: 80px 0;
+    .block {
+        height: 140px;
+        border-radius: 5px;
+        border: 1px solid rgb(217, 217, 217);
+        overflow: hidden;
+        position: relative;
+        &:hover {
+            border-color: #fb0561;
+            .block-hov {
+                opacity: 1;
+            }
+        }
+        .block-src, .block-hov {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        .block-hov {
+            opacity: 0;
+        }
     }
 }

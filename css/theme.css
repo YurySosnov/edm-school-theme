@@ -470,21 +470,6 @@ tb-notification-button__text:after {
 .reviews .videos {
   text-align: center;
 }
-.reviews .videos .left,
-.reviews .videos .right {
-  width: 23px;
-  height: 47px;
-  display: inline-block;
-  margin: 10px 25px 0;
-  cursor: pointer;
-  background-size: contain;
-}
-.reviews .videos .left {
-  background-image: url('../img/str-left.png');
-}
-.reviews .videos .right {
-  background-image: url('../img/str-right.png');
-}
 .reviews .videos .owl-carousel:before,
 .reviews .videos .owl-carousel:after {
   display: block;
@@ -501,6 +486,25 @@ tb-notification-button__text:after {
 }
 .reviews .videos .owl-carousel:after {
   right: 0;
+}
+.videos .left,
+.works .left,
+.videos .right,
+.works .right {
+  width: 23px;
+  height: 47px;
+  display: inline-block;
+  margin: 30px 25px 0;
+  cursor: pointer;
+  background-size: contain;
+}
+.videos .left,
+.works .left {
+  background-image: url('../img/str-left.png');
+}
+.videos .right,
+.works .right {
+  background-image: url('../img/str-right.png');
 }
 @media screen and (max-width: 1720px) {
   .reviews .opt1 {
@@ -592,12 +596,10 @@ tb-notification-button__text:after {
 .homepage-big-video .but {
   width: 137px;
   height: 137px;
-  margin: auto;
-  margin-top: 10px;
-  margin-bottom: -140px;
+  margin: 10px auto -140px;
   background: url('../img/big-video-button.png') no-repeat center bottom, #18134e;
   border-radius: 100%;
-  box-shadow: 0px 0px 40px rgba(249, 21, 105, 0.7);
+  box-shadow: 0 0 40px rgba(249, 21, 105, 0.7);
   animation: shadow 2s infinite ease-in-out;
   cursor: pointer;
 }
@@ -652,4 +654,44 @@ tb-notification-button__text:after {
 .homepage-news a:focus {
   color: #000;
   text-decoration: none;
+}
+.works {
+  padding: 80px 0;
+  text-align: center;
+}
+.works .zag {
+  color: #fff;
+}
+.works-slider .item {
+  background-color: #0f0f43;
+  padding: 20px;
+}
+.logos {
+  padding: 80px 0;
+}
+.logos .block {
+  height: 140px;
+  border-radius: 5px;
+  border: 1px solid #d9d9d9;
+  overflow: hidden;
+  position: relative;
+}
+.logos .block:hover {
+  border-color: #fb0561;
+}
+.logos .block:hover .block-hov {
+  opacity: 1;
+}
+.logos .block .block-src,
+.logos .block .block-hov {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.logos .block .block-hov {
+  opacity: 0;
 }
