@@ -65,24 +65,43 @@ if ( $atts['inner_area'] ) {
     }
 }
 
+$section_title_styles = '';
+
+if ( !empty( $atts['section_title_color'] ) ){
+    $section_title_styles .= 'color: ' .  $atts['section_title_color'];
+}
+if ( !empty( $atts['section_title_padding'] ) ){
+    $section_title_styles .= 'padding: ' .  $atts['section_title_padding'];
+}
+
+if ( $section_title_styles !== '' ) {
+    $section_title_styles = 'style="' . $section_title_styles . '"';
+}
+
 ?>
-<section class="fw-main-row<?php echo esc_attr($section_extra_classes) ?>" <?php echo $section_style; ?> <?php echo $bg_video_data_attr; ?>>
+<section class="fw-main-row<?= esc_attr($section_extra_classes) ?>" <?= $section_style; ?> <?= $bg_video_data_attr; ?>>
     <?php if ( isset( $atts['background_video_url'] ) && $atts['background_video_url'] !== '' ) : ?>
-        <video class="section-background-video"<?php echo $html_video_parameters; ?><?php echo $video_styles; ?>>
-            <source src="<?php echo $atts['background_video_url']; ?>" type="video/mp4">
+        <video class="section-background-video"<?= $html_video_parameters; ?><?= $video_styles; ?>>
+            <source src="<?= $atts['background_video_url']; ?>" type="video/mp4">
         </video>
     <?php endif; ?>
     <?php if ( $atts['overlay'] ): ?>
-        <div class="section-overlay" <?php echo $overlay_style; ?>></div>
+        <div class="section-overlay" <?= $overlay_style; ?>></div>
     <?php endif; ?>
 
     <?php if ( $atts['inner_area'] ): ?>
-        <<?php echo $atts['inner_area_tag']; ?><?php echo $inner_area_parameters; ?>>
+        <<?= $atts['inner_area_tag']; ?><?= $inner_area_parameters; ?>>
     <?php endif; ?>
-	<div class="<?php echo esc_attr($container_class); ?>">
-		<?php echo do_shortcode( $content ); ?>
+	<div class="<?= esc_attr($container_class); ?>">
+        <?php if ( $atts['section_title'] !== '' ) : ?>
+        <div class="section-title"<?= $section_title_styles; ?>><?= $atts['section_title']; ?></div>
+        <?php endif; ?>
+		<?= do_shortcode( $content ); ?>
 	</div>
     <?php if ( $atts['inner_area'] ): ?>
-    </<?php echo $atts['inner_area_tag']; ?>>
+    </<?= $atts['inner_area_tag']; ?>>
     <?php endif; ?>
 </section>
+<?php if ($atts['stickyda_after']) : ?>
+<div class="stickyDa"></div>
+<?php endif; ?>

@@ -3,6 +3,19 @@
 }
 
 $options = array(
+    'section_title' => array(
+        'label' => __('Section Title', 'fw'),
+        'type'  => 'text',
+        'value' => ''
+    ),
+    'section_title_color' => array(
+        'label' => __('Section Title Color', 'fw'),
+        'type'  => 'color-picker',
+    ),
+    'section_title_padding' => array(
+        'label' => __('Section Title Padding', 'fw'),
+        'type'  => 'text',
+    ),
 	'is_fullwidth' => array(
 		'label'        => __('Full Width', 'fw'),
 		'type'         => 'switch',
@@ -101,5 +114,10 @@ $options = array(
         'type'  => 'text',
         'label' =>  __( 'Background Video Opacity', 'fw' ),
         'value' => '1'
+    ),
+    'stickyda_after' => array(
+        'type'  => 'switch',
+        'label' =>  __( 'StickyDa after', 'fw' ),
+        'value' => false
     ),
 );

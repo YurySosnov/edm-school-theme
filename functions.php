@@ -129,8 +129,9 @@ function edm_school_scripts() {
     wp_enqueue_script( 'edm-school-youtube-player-api', '//www.youtube.com/player_api', array(), '1', false );
     wp_enqueue_script( 'edm-school-scripts-header', get_template_directory_uri() . '/js/scripts-header.js', array(), '1', false );
 
-    wp_enqueue_script( 'edm-school-jquery', get_template_directory_uri() . '/js/jquery-3.3.1.min.js', array(), '3.3.1', true );
-    wp_enqueue_script( 'edm-school-owl-carousel', get_template_directory_uri() . '/js/owl.carousel.js', array(), '1', true );
+    wp_enqueue_script( 'edm-school-jquery', get_template_directory_uri() . '/js/jquery-3.3.1.min.js', array(), '3.3.1', false );
+    wp_enqueue_script( 'edm-school-owl-carousel', get_template_directory_uri() . '/js/owl.carousel.js', array(), '1', false );
+    wp_enqueue_script( 'edm-school-masked-input', get_template_directory_uri() . '/js/jquery.maskedinput.js', array(), '1', false );
 
     wp_enqueue_script( 'edm-school-notification-widget', '//unpkg.com/@textback/notification-widget@latest/build/index.js', array(), '1', true );
     wp_enqueue_script( 'edm-school-scripts', get_template_directory_uri() . '/js/scripts.js', array(), '1', true );

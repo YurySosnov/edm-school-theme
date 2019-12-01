@@ -4,7 +4,7 @@
 
 $options = array(
     'text' => array(
-        'type'  => 'wp-editor',
+        'type'  => 'textarea',
         'label' => __( 'Content', 'fw' ),
         'desc'  => __( 'Enter some content for this texblock', 'fw' )
     ),
