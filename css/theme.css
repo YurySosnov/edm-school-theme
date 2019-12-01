@@ -829,8 +829,14 @@ tb-notification-button__text:after {
   display: block;
   width: 20px;
 }
-.label_39 {
-  display: none;
+a.polit {
+  font-size: 18px;
+  font-family: 'Montserrat-Bold';
+  color: #fff;
+  text-decoration: none;
+}
+a.polit:hover {
+  opacity: 0.5;
 }
 @media screen and (max-width: 1720px) {
   .reviews .opt1 {
