@@ -17,8 +17,12 @@ $options = array(
                 'label' => __('Name', 'fw')
             ),
             'text' => array(
-                'type'  => 'wp-editor',
+                'type'  => 'textarea',
                 'label' => __('Content', 'fw')
+            ),
+            'age'  => array(
+                'type'  => 'text',
+                'label' => __('Age', 'fw')
             ),
             'img'   => array(
                 'type'  => 'upload',
@@ -55,7 +59,8 @@ $options = array(
             'video'    => __('Video', 'fw'),
             'audio'    => __('Audio', 'fw'),
             'dj'       => __('DJ List Top', 'fw'),
-            'dj_alt'   => __('DJ List Bottom', 'fw')
+            'dj_alt'   => __('DJ List Bottom', 'fw'),
+            'reviews'  => __('Reviews', 'fw'),
         )
     ),
     'loop' => array(

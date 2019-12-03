@@ -67,28 +67,6 @@ p {
 .page {
   margin: 0;
 }
-.section {
-  position: relative;
-  overflow: hidden;
-}
-.section.full-height {
-  min-height: 100vh;
-}
-.section-overlay {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  left: 0;
-  top: 0;
-}
-.section-background-video {
-  min-width: 100%;
-  min-height: 100%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
 .new-class {
   display: block;
 }
@@ -122,6 +100,29 @@ p {
   to {
     box-shadow: 0 0 40px rgba(249, 21, 105, 0.7);
   }
+}
+.section {
+  position: relative;
+  overflow: hidden;
+  /* SECTIONS */
+}
+.section.full-height {
+  min-height: 100vh;
+}
+.section-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+.section-background-video {
+  min-width: 100%;
+  min-height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .section-title {
   display: block;
@@ -419,11 +420,12 @@ p {
 .section-teachers-slider-1 {
   overflow: hidden;
 }
+.section-teachers-title {
+  padding-top: 80px;
+  padding-bottom: 16px;
+}
 .section-works {
   padding: 80px 0 65px;
-}
-.section-learning {
-  padding: 80px 0;
 }
 .section-big-video .cont {
   height: 850px;
@@ -546,6 +548,38 @@ p {
 .section-reviews .videos .owl-carousel:after {
   right: 0;
 }
+.section-learning {
+  padding: 80px 0;
+}
+.section-learning .block {
+  min-height: 20px;
+  border: 1px solid #d9d9d9;
+  border-radius: 5px;
+  padding: 40px 35px;
+  text-align: left;
+  font-size: 16px;
+  font-family: 'Montserrat-Bold';
+  transition: all 0.2s ease-out;
+  background-color: #fff;
+  height: 100%;
+  position: relative;
+}
+.section-learning .block:hover {
+  color: #fff;
+  background: linear-gradient(45deg, #321149, #151251, #321149);
+}
+.section-learning .img {
+  text-align: center;
+}
+.section-learning .learning-row {
+  display: flex;
+  align-items: stretch;
+  flex-wrap: wrap;
+  padding-top: 30px;
+}
+.section-learning .learning-row > div {
+  margin-bottom: 25px;
+}
 @media screen and (max-width: 1720px) {
   .section-reviews .opt1 {
     display: none;
@@ -642,23 +676,24 @@ img.logo-centered {
 .custom-slider-design-logos .slider-img-hover:hover {
   opacity: 1;
 }
-.red-prev,
-.red-next {
+.pink-prev,
+.pink-next {
   background-repeat: no-repeat;
   background-size: cover;
   transition: all 0.2s ease-out;
   width: 23px;
   height: 47px;
   cursor: pointer;
-}
-.red-prev.inline-block,
-.red-next.inline-block {
   display: inline-block;
 }
-.red-prev {
+.pink-prev.inline-block,
+.pink-next.inline-block {
+  display: inline-block;
+}
+.pink-prev {
   background-image: url('../img/str-left.png');
 }
-.red-next {
+.pink-next {
   background-image: url('../img/str-right.png');
 }
 .dj-list-prev,
@@ -719,6 +754,44 @@ dj-slider-top .dj-list-alt-next:hover {
 .dj-slider-bottom-nav-outer {
   text-align: center;
 }
+.slider-buttons-align-center {
+  text-align: center;
+}
+.slider-reviews {
+  margin: 35px 0;
+}
+.slider-reviews .item p {
+  color: #a1a9ba;
+  max-height: 230px;
+  overflow-y: auto;
+  display: block;
+  line-height: 21px;
+  font-size: 14px;
+  font-family: 'Montserrat-Regular';
+}
+.slider-reviews .item p::-webkit-scrollbar {
+  width: 0;
+}
+.slider-reviews .item strong {
+  color: #fff;
+  font-size: 16px;
+}
+.slider-reviews .item .info {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+.slider-reviews .item .img {
+  flex-shrink: 0;
+  width: 100px;
+  height: 100px;
+  border: 3px solid #ea1e6c;
+  border-radius: 100%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-right: 20px;
+}
 .direction-block {
   width: 100%;
   height: 390px;
@@ -770,26 +843,18 @@ dj-slider-top .dj-list-alt-next:hover {
   background-color: #d8d8d8;
 }
 /* TEACHERS SLIDER */
-.homepage-section-teachers-title {
-  padding-top: 80px;
-  padding-bottom: 16px;
-}
-.homepage-section-teachers-title .zag {
-  color: #fff;
-  margin-bottom: 0;
-}
-.slider-buttons-align {
+.homepage-section .slider-buttons-align {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
 }
-.slider-buttons-align-center {
+.homepage-section .slider-buttons-align-center {
   justify-content: center;
 }
-.slider-buttons-align-left {
+.homepage-section .slider-buttons-align-left {
   justify-content: flex-start;
 }
-.slider-buttons-align-right {
+.homepage-section .slider-buttons-align-right {
   justify-content: flex-end;
 }
 /* VK PLUGIN */
@@ -825,39 +890,6 @@ tb-notification-button__text:after {
   font-size: 14px;
 }
 /* REVIEWS */
-.cool-learning {
-  padding-top: 80px;
-  padding-bottom: 80px;
-}
-.cool-learning .block {
-  min-height: 20px;
-  border: 1px solid #d9d9d9;
-  border-radius: 5px;
-  padding: 40px 35px;
-  text-align: left;
-  font-size: 16px;
-  font-family: 'Montserrat-Bold';
-  transition: all 0.2s ease-out;
-  background-color: #fff;
-  height: 100%;
-  position: relative;
-}
-.cool-learning .block:hover {
-  color: #fff;
-  background: linear-gradient(45deg, #321149, #151251, #321149);
-}
-.cool-learning .img {
-  text-align: center;
-}
-.cool-learning .learning-row {
-  display: flex;
-  align-items: stretch;
-  flex-wrap: wrap;
-  padding-top: 30px;
-}
-.cool-learning .learning-row > div {
-  margin-bottom: 25px;
-}
 .works {
   padding: 80px 0;
   text-align: center;

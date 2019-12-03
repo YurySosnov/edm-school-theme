@@ -18,23 +18,24 @@ if ( !function_exists ('tpl_getVar') ){
                 return ( $var === false || $var === '' ) ? 'false' : 'true';
                 break;
         }
+        return false;
     }
 }
 $counter = 0;
 $type = 'default';
-if ( $atts['dj_list_slider'] ) {
-    $type = 'dj';
-    if ( $atts['alternative'] ) {
-        $type = 'dj_alt';
-    }
-}
-if ( $atts['video'] ) {
-    $type = 'video';
-}
-
-if ( $atts['audio'] ) {
-    $type = 'audio';
-}
+//if ( $atts['dj_list_slider'] ) {
+//    $type = 'dj';
+//    if ( $atts['alternative'] ) {
+//        $type = 'dj_alt';
+//    }
+//}
+//if ( $atts['video'] ) {
+//    $type = 'video';
+//}
+//
+//if ( $atts['audio'] ) {
+//    $type = 'audio';
+//}
 
 $type = $atts['slider_type'];
 
@@ -52,6 +53,9 @@ if ( !function_exists ('tpl_convertClassForJQ') ) {
 }
 
 $slider_additional_class = ( $atts['slider_class'] !== '' ) ? ' ' . $atts['slider_class'] : '';
+if ( $type === 'reviews') {
+    $slider_additional_class .= ' slider-reviews';
+}
 $slider_additional_class .= ' custom-slider-design-' . $atts['design'];
 $slider_class_js = tpl_convertClassForJQ( $atts['slider_class'] );
 ?>
@@ -64,7 +68,7 @@ $slider_class_js = tpl_convertClassForJQ( $atts['slider_class'] );
     <?php $slider_class_js = '.dj-list-top-slider';?>
     <div class="dj-slider-top">
         <div class="fw-container">
-            <div class="dj-list-prev red-prev"></div>
+            <div class="dj-list-prev pink-prev"></div>
             <div class="owl-carousel<?= $slider_additional_class; ?>">
                 <?php foreach ( fw_akg( 'slides', $atts, array() ) as $slide ) : ?>
                     <?php $counter++; ?>
@@ -75,7 +79,7 @@ $slider_class_js = tpl_convertClassForJQ( $atts['slider_class'] );
                     </div>
                 <?php endforeach; ?>
             </div>
-            <div class="dj-list-next red-next"></div>
+            <div class="dj-list-next pink-next"></div>
         </div>
     </div>
 <?php endif; ?>
@@ -106,13 +110,27 @@ $slider_class_js = tpl_convertClassForJQ( $atts['slider_class'] );
                 </div>
             </div>
             <div class="fw-col-12 fw-col-md-2 fw-order-1 fw-order-md-2 dj-slider-bottom-nav-outer">
-                <div class="dj-list-alt-prev red-prev"></div>
-                <div class="dj-list-alt-next red-next"></div>
+                <div class="dj-list-alt-prev pink-prev"></div>
+                <div class="dj-list-alt-next pink-next"></div>
             </div>
         </div>
     </div>
 <?php endif; ?>
-
+<?php if ( $type === 'reviews') : ?>
+<div class="owl-carousel<?= $slider_additional_class; ?>">
+    <?php foreach ( fw_akg( 'slides', $atts, array() ) as $slide ) : ?>
+        <div class="item">
+            <div class="info">
+                <div class="img"<? if ( !empty( $slide['img'] ) ) : ?> style="background-image: url('<?= $slide['img']['url'] ; ?>');" <? endif; ?>></div>
+                <div class="text">
+                    <p class="name"><strong><?= $slide['name']; ?></strong>, <?= $slide['age']; ?></p>
+                    <p><?= $slide['text']; ?></p>
+                </div>
+            </div>
+        </div>
+    <?php endforeach; ?>
+</div>
+<?php endif; ?>
 <?php if ( $type === 'default' || $type === 'video' || $type === 'audio' ) : ?>
     <div class="owl-carousel owl-theme<?= $slider_additional_class; ?>">
         <?php foreach ( fw_akg( 'slides', $atts, array() ) as $slide ) : ?>

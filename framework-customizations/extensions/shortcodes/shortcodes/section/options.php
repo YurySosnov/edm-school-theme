@@ -8,6 +8,11 @@ $options = array(
         'label' => __('Shortcode title', 'fw'),
         'value' => '',
     ),
+    'custom_section_class' => array(
+        'label' => __('Custom section class', 'fw'),
+        'desc'  => __('Insert CSS class', 'fw'),
+        'type'  => 'text',
+    ),
     'section_title' => array(
         'label' => __('Section Title', 'fw'),
         'type'  => 'text',
@@ -53,11 +58,6 @@ $options = array(
 		'desc'  => __('Insert Video URL to embed this video', 'fw'),
 		'type'  => 'text',
 	),
-    'custom_section_class' => array(
-        'label' => __('Custom section class', 'fw'),
-        'desc'  => __('Insert CSS class', 'fw'),
-        'type'  => 'text',
-    ),
 
     'inner_area' => array(
         'label'        => __('Inner Area', 'fw'),
