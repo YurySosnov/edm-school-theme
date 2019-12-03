@@ -3,6 +3,11 @@
 }
 
 $options = array(
+    'shortcode_title' => array(
+        'type' => 'text',
+        'label' => __('Shortcode title', 'fw'),
+        'value' => '',
+    ),
     'section_title' => array(
         'label' => __('Section Title', 'fw'),
         'type'  => 'text',

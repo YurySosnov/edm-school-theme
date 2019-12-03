@@ -147,25 +147,13 @@ $options = array(
         'type' => 'text',
         'label' => __('Buttons margin','fw'),
         'value' => '0'
+    ),
+    'design' => array(
+        'type' => 'select',
+        'label' => __('Design','fw'),
+        'choices' => array(
+            'default' => __('Default','fw'),
+            'logos' => __('Logos','fw')
+        )
     )
-//    'alternative' => array(
-//        'label'        => __('Alternative slider', 'fw'),
-//        'type'         => 'switch',
-//        'value'        => false
-//    ),
-//    'dj_list_slider' => array(
-//        'label'        => __('DJ Slider', 'fw'),
-//        'type'         => 'switch',
-//        'value'        => false
-//    ),
-//    'video' => array(
-//        'label'        => __('Videos Slider', 'fw'),
-//        'type'         => 'switch',
-//        'value'        => false
-//    ),
-//    'audio' => array(
-//        'label'        => __('Audios Slider', 'fw'),
-//        'type'         => 'switch',
-//        'value'        => false
-//    ),
 );

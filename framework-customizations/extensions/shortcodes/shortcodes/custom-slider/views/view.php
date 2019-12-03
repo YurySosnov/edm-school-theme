@@ -52,6 +52,7 @@ if ( !function_exists ('tpl_convertClassForJQ') ) {
 }
 
 $slider_additional_class = ( $atts['slider_class'] !== '' ) ? ' ' . $atts['slider_class'] : '';
+$slider_additional_class .= ' custom-slider-design-' . $atts['design'];
 $slider_class_js = tpl_convertClassForJQ( $atts['slider_class'] );
 ?>
 
@@ -105,8 +106,8 @@ $slider_class_js = tpl_convertClassForJQ( $atts['slider_class'] );
                 </div>
             </div>
             <div class="fw-col-12 fw-col-md-2 fw-order-1 fw-order-md-2 dj-slider-bottom-nav-outer">
-                <div class="dj-list-alt-prev"></div>
-                <div class="dj-list-alt-next"></div>
+                <div class="dj-list-alt-prev red-prev"></div>
+                <div class="dj-list-alt-next red-next"></div>
             </div>
         </div>
     </div>
@@ -116,16 +117,19 @@ $slider_class_js = tpl_convertClassForJQ( $atts['slider_class'] );
     <div class="owl-carousel owl-theme<?= $slider_additional_class; ?>">
         <?php foreach ( fw_akg( 'slides', $atts, array() ) as $slide ) : ?>
             <div class="item">
-                <div class="fw-col-12">
-                    <?php if ( $type === 'audio') : ?>
-                        <?= $slide['audio']; ?>
-                    <?php endif; ?>
-                    <?php if ( $type === 'video') : ?>
-                        <div class="video-block">
-                            <?= $slide['video']; ?>
-                        </div>
-                    <?php endif; ?>
-                </div>
+                <?php if ( $type === 'audio') : ?>
+                    <?= $slide['audio']; ?>
+                <?php endif; ?>
+                <?php if ( $type === 'video') : ?>
+                    <div class="video-block">
+                        <?= $slide['video']; ?>
+                    </div>
+                <?php endif; ?>
+                <?php if ( $type === 'default' ) : ?>
+                    <div class="slider-img" <? if ( !empty( $slide['img'] ) ) : ?> style="background-image: url('<?= $slide['img']['url'] ; ?>');" <? endif; ?>>
+                        <div class="slider-img-hover" <? if ( !empty( $slide['img_hover'] ) ) : ?> style="background-image: url('<?= $slide['img_hover']['url'] ; ?>');" <? endif; ?>></div>
+                    </div>
+                <?php endif; ?>
             </div>
         <?php endforeach; ?>
     </div>
