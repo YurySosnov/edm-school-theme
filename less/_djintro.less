@@ -1,0 +1,115 @@
+.title-header-block {
+    p {
+        font-size: 24px;
+    }
+}
+
+.text-header-block {
+    p {
+        display: inline;
+        font-size: 20px;
+    }
+}
+
+.line.line-588 {
+    margin: 0;
+    height: 5px;
+    max-width: 588px;
+}
+
+.fw-row.djing {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.block-djing {
+    padding: 30px;
+    background-color: #ffffff;
+    border: 1px solid #12114a;
+    border-radius: 5px;
+    margin-right: 15px;
+    max-width: 380px;
+    margin-bottom: 15px;
+    .font-mns('SemiBold',16px);
+    color: #262626;
+    &:hover {
+        background: url('../img/hover-dj.jpg') no-repeat;
+        background-size: cover;
+        background-position: center;
+        color: #fff;
+    }
+    &.container-about-djing {
+        position: relative;
+        background-image: url('../img/edm-icon.png');
+        background-repeat: no-repeat;
+        background-position: left 30px top 30px;
+        background-color: #100f41;
+        border-radius: 5px;
+        .font-mns('Bold',16px);
+        color: #fff;
+        &:hover {
+            background-color: #100f41;
+            background-image: url('../img/edm-icon.png');
+            background-repeat: no-repeat;
+            background-position: left 30px top 30px;
+            background-size: auto;
+        }
+    }
+    p {
+        .font-mns('Bold',16px);
+        line-height: 1.5;
+    }
+    .question-btn {
+        max-width: 300px;
+        width: 100%;
+        text-align: left;
+        margin-bottom: 0;
+        position: relative;
+        margin-top: 43px;
+        text-transform: inherit !important;
+    }
+    .container-about-djing .question-btn {
+        color: #ffffff;
+        max-width: 100%;
+    }
+    .none-bg{
+        background: transparent !important;
+        box-shadow: none !important;
+        border: none !important;
+        border-radius: 0;
+        padding: 0;
+        animation: none;
+        cursor: pointer;
+    }
+    .none-bg:hover {
+        background: transparent !important;
+    }
+    .content-block-djing {
+        display: flex;
+        align-items: center;
+    }
+
+    .arrow-btn {
+        background-image: url("../img/arrow-right.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 19px;
+        height: 13px;
+        display: block;
+        position: absolute;
+        right: 30px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+.fw-container.djing {
+    padding: 0;
+}
+
+@media screen and (max-width: @screen-sm) {
+    .block-djing {
+        margin-right: 0;
+    }
+}
+

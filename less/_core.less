@@ -66,3 +66,20 @@ p {
     flex: 0 0 100%;
     max-width: 100%;
 }
+
+.rose-underlined {
+    position: relative;
+    display: inline-block;
+    margin: 0 auto;
+    font-weight: bold;
+    &:after {
+        position: absolute;
+        content: ' ';
+        display: block;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: @color_rose;
+        width: 100%;
+        height: 5px;
+    }
+}
