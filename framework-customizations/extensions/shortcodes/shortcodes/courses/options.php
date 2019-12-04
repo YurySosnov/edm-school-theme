@@ -11,13 +11,13 @@ $options = array(
                 'type'  => 'text',
                 'label' => __('Title', 'fw')
             ),
+            'text'   => array(
+                'type'  => 'textarea',
+                'label' => __('Text', 'fw')
+            ),
             'image' => array(
                 'type'  => 'upload',
                 'label' => __( 'Image', 'fw' ),
-            ),
-            'image_hover' => array(
-                'type'  => 'upload',
-                'label' => __( 'Hover Image', 'fw' ),
             ),
         )
     )

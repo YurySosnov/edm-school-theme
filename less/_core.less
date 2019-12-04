@@ -5,6 +5,9 @@
     background-color: transparent;
     border: none;
     box-shadow: none;
+    &::-webkit-scrollbar {
+        width: 0;
+    }
 }
 body{
     .font-mns('Regular',none,300);
@@ -51,6 +54,12 @@ p {
     }
 }
 
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+}
+
 .pink-button {
     &-question {
         color: #fff;
@@ -67,7 +76,6 @@ p {
         box-shadow: 0 0 40px rgba(249, 21, 105, 0.7);
         animation: shadow 2s infinite ease-in-out;
         .font-mns('SemiBold', 16px);
-        margin-bottom: 45px;
     }
 }
 

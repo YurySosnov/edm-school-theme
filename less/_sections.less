@@ -39,7 +39,10 @@
     /* SECTIONS */
 
     &-top {
-        background-image: linear-gradient(to top left, #231563, #2e114b);
+        background-color: #121149;
+        &-homepage {
+            background-image: linear-gradient(to top left, #231563, #2e114b);
+        }
         &-inner {
             margin: 0 auto;
             padding-top: 20px;
@@ -86,6 +89,10 @@
         text-align: center;
         color: #fff;
         position: relative;
+        background-color: #12114d;
+        background-image: url('../img/section-utp-bg.png');
+        background-size: cover;
+        background-position: center;
         .zag {
             color: #fff;
         }
@@ -481,6 +488,14 @@
                 margin-bottom: 25px;
             }
         }
+    }
+    &-suitable {
+        padding: 80px 65px;
+        background-image: linear-gradient(45deg,rgba(16,15,67,1)0%, rgba(13,12,54,1)100%);
+    }
+    &-courses {
+        padding: 80px 65px;
+        background: linear-gradient(45deg,rgba(16,15,67,1)0%, rgba(13,12,54,1)100%);
     }
 }
 

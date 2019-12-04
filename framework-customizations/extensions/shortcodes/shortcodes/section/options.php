@@ -13,6 +13,16 @@ $options = array(
         'desc'  => __('Insert CSS class', 'fw'),
         'type'  => 'text',
     ),
+    'is_fullwidth' => array(
+        'label'        => __('Full Width', 'fw'),
+        'type'         => 'switch',
+        'value'        => false
+    ),
+    'is_fullheight' => array(
+        'label'        => __('Full Height', 'fw'),
+        'type'         => 'switch',
+        'value'        => false
+    ),
     'section_title' => array(
         'label' => __('Section Title', 'fw'),
         'type'  => 'text',
@@ -26,16 +36,7 @@ $options = array(
         'label' => __('Section Title Padding', 'fw'),
         'type'  => 'text',
     ),
-	'is_fullwidth' => array(
-		'label'        => __('Full Width', 'fw'),
-		'type'         => 'switch',
-        'value'        => false
-	),
-    'is_fullheight' => array(
-        'label'        => __('Full Height', 'fw'),
-        'type'         => 'switch',
-        'value'        => false
-    ),
+
 	'background_color' => array(
 		'label' => __('Background Color', 'fw'),
 		'desc'  => __('Please select the background color', 'fw'),
@@ -53,11 +54,37 @@ $options = array(
         'desc'  => __('Please select the background CSS gradient', 'fw'),
         'type'  => 'text',
     ),
-	'video' => array(
-		'label' => __('Background Video', 'fw'),
-		'desc'  => __('Insert Video URL to embed this video', 'fw'),
-		'type'  => 'text',
-	),
+
+    'video' => array(
+        'label' => __('Background Video', 'fw'),
+        'desc'  => __('Insert Video URL to embed this video', 'fw'),
+        'type'  => 'text',
+    ),
+    'background_video_url' => array(
+        'label' => __('Background Video URL', 'fw'),
+        'type'  => 'text',
+    ),
+    'background_video_autoplay' => array(
+        'type'  => 'switch',
+        'label' =>  __( 'Background Video Autoplay', 'fw' ),
+        'desc'  => __( 'Autoplay video (only if muted)', 'fw' ),
+        'value' => false
+    ),
+    'background_video_loop' => array(
+        'type'  => 'switch',
+        'label' =>  __( 'Background Video Loop', 'fw' ),
+        'value' => false
+    ),
+    'background_video_muted' => array(
+        'type'  => 'switch',
+        'label' =>  __( 'Background Video Mute', 'fw' ),
+        'value' => true
+    ),
+    'background_video_opacity' => array(
+        'type'  => 'text',
+        'label' =>  __( 'Background Video Opacity', 'fw' ),
+        'value' => '1'
+    ),
 
     'inner_area' => array(
         'label'        => __('Inner Area', 'fw'),
@@ -95,31 +122,7 @@ $options = array(
         'desc'  => __('Please select the background CSS gradient', 'fw'),
         'type'  => 'text',
     ),
-    'background_video_url' => array(
-        'label' => __('Background Video URL', 'fw'),
-        'type'  => 'text',
-    ),
-    'background_video_autoplay' => array(
-        'type'  => 'switch',
-        'label' =>  __( 'Background Video Autoplay', 'fw' ),
-        'desc'  => __( 'Autoplay video (only if muted)', 'fw' ),
-        'value' => false
-    ),
-    'background_video_loop' => array(
-        'type'  => 'switch',
-        'label' =>  __( 'Background Video Loop', 'fw' ),
-        'value' => false
-    ),
-    'background_video_muted' => array(
-        'type'  => 'switch',
-        'label' =>  __( 'Background Video Mute', 'fw' ),
-        'value' => true
-    ),
-    'background_video_opacity' => array(
-        'type'  => 'text',
-        'label' =>  __( 'Background Video Opacity', 'fw' ),
-        'value' => '1'
-    ),
+
     'stickyda_after' => array(
         'type'  => 'switch',
         'label' =>  __( 'StickyDa after', 'fw' ),

@@ -30,4 +30,14 @@ $options = array(
         'label'  => __( 'Alt text for IMG', 'fw' ),
         'value'  => ''
     ),
+    'use_url' => array(
+        'type'   => 'switch',
+        'label'  => __( 'Use URL', 'fw' ),
+        'value'  => false
+    ),
+    'url' => array(
+        'type'   => 'text',
+        'label'  => __( 'URL', 'fw' ),
+        'value'  => ''
+    ),
 );

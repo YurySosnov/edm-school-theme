@@ -14,11 +14,18 @@ if ( $atts['class'] !== '' ) {
 }
 $src = '/wp-content/themes/edm-school/img/logos/' . $atts['name'] . '.svg';
 ?>
-<? if ( $atts['tag'] && $atts['tag'] !== 'img') : ?>
+<?php if ( $atts['use_url'] ) : ?>
+<a href="<?= $atts['url'] ;?>">
+<?php endif; ?>
+
+<?php if ( $atts['tag'] && $atts['tag'] !== 'img') : ?>
     <<?php echo $atts['tag']; ?> class="logo <?php echo $class; ?>"></<?php echo $atts['tag']; ?>>
-<? endif; ?>
+<?php endif; ?>
 
-<? if ( !$atts['tag'] || $atts['tag'] === 'img') : ?>
+<?php if ( !$atts['tag'] || $atts['tag'] === 'img') : ?>
     <img src="<?php echo $src; ?>" alt="<?php $atts['alt']; ?>" class="logo <?php echo $class; ?>">
-<? endif; ?>
+<?php endif; ?>
 
+<?php if ( $atts['use_url'] ) : ?>
+</a>
+<?php endif; ?>
