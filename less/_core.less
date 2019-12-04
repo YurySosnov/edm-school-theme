@@ -51,6 +51,26 @@ p {
     }
 }
 
+.pink-button {
+    &-question {
+        color: #fff;
+        text-align: center;
+        background-color: #12114a;
+        border-radius: 5px;
+        border: none;
+        padding: 20px;
+        min-width: 281px;
+        max-width: 442px;
+        width: 100%;
+        background: url('../img/arrow-right.png') 90% 50% no-repeat, linear-gradient(to top, #fe186d, #dc0656) !important;
+        border-bottom: 3px solid #b70547 !important;
+        box-shadow: 0 0 40px rgba(249, 21, 105, 0.7);
+        animation: shadow 2s infinite ease-in-out;
+        .font-mns('SemiBold', 16px);
+        margin-bottom: 45px;
+    }
+}
+
 @keyframes shadow {
     from {box-shadow: 0 0 40px rgba(249, 21, 105, 0.7);}
     50% {box-shadow: 0 0 0 rgba(249, 21, 105, 0.7);}

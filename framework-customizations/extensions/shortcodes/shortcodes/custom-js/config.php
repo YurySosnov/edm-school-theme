@@ -2,7 +2,7 @@
 $cfg = array(
     'page_builder' => array(
         'title'         => __('JS block', 'fw'),
-        'tab'           => __('EDM', 'fw'),
+        'tab'           => __('EDMS', 'fw'),
         'popup_size'    => 'medium', // can be large, medium or small
         /*
         // Icon examples

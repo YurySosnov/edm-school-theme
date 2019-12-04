@@ -1,7 +1,7 @@
 <?php
 $cfg = array(
     'page_builder' => array(
-        'title'         => __('DJing items', 'fw'),
+        'title'         => __('Suitable items', 'fw'),
         'tab'           => __('EDMS', 'fw'),
         'popup_size'    => 'medium', // can be large, medium or small
         /*

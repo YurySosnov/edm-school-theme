@@ -1,8 +1,8 @@
 <?php
 $cfg = array(
     'page_builder' => array(
-        'title'         => __('HP Learning items', 'fw'),
-        'tab'           => __('EDM', 'fw'),
+        'title'         => __('Learning items', 'fw'),
+        'tab'           => __('EDMS', 'fw'),
         'popup_size'    => 'medium', // can be large, medium or small
         /*
         // Icon examples

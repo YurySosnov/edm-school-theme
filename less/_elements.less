@@ -1,0 +1,92 @@
+.elements {
+    &-suitable {
+        .item {
+            max-width: 380px;
+            width: 100%;
+            min-height: 234px;
+            background-color: #1f1d7f;
+            border-radius: 5px;
+            position: relative;
+            overflow-y: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            cursor: pointer;
+            margin: 0 18px 18px 0;
+            &:before {
+                content: '';
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: 15px;
+                top: 0;
+                background: radial-gradient(ellipse at center, rgba(32, 29, 127, 1) 0%, rgba(40, 28, 126, 1) 100%);
+                box-shadow: 0 10px 12px 12px rgba(8, 8, 33, 0.38);
+                border-radius: 5px;
+            }
+            &-info {
+                z-index: 10;
+                position: relative;
+                padding-top: 50px;
+            }
+            &-number {
+                margin-bottom: 30px;
+                height: 30px;
+                overflow-y: hidden;
+                position: relative;
+                display: flex;
+                justify-content: center;
+                h2 {
+                    font-size: 68px;
+                    font-weight: bold;
+                    position: absolute;
+                    top: -18px;
+                    left: 50%;
+                    transform: translate(-50%);
+                    color: #3029b3;
+                }
+            }
+            &-text {
+                max-width: 288px;
+                width: 100%;
+                p {
+                    color: #ffffff;
+                    font-size: 18px;
+                    font-weight: bold;
+                    text-align: center;
+                    line-height: 1.5;
+                }
+            }
+            &-last {
+                padding: 40px;
+                border-radius: 5px;
+                border: 1px solid #e20459;
+                min-height: 234px;
+                max-width: 776px;
+                width: 100%;
+                margin-bottom: 18px;
+                margin-right: 18px;
+                .item-info {
+                    position: relative;
+                    background: url('../img/edm-icon.png') right 0 top 0 no-repeat, url('../img/exclametion.png') right 0 bottom 0 no-repeat;
+                }
+                .item-title {
+                    margin-bottom: 15px;
+                    color: #fff;
+                    .font-mns('Bold',24px);
+                }
+            }
+            &-submit {
+                &.pink-button-question {
+                    max-width: 300px;
+                    width: 100%;
+                    text-align: left;
+                    margin-bottom: 0;
+                    position: relative;
+                    margin-top: 43px;
+                    text-transform: inherit !important;
+                }
+            }
+        }
+    }
+}
