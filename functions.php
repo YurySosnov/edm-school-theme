@@ -124,7 +124,9 @@ function edm_school_scripts() {
 
     wp_enqueue_style( 'edm-school-css-owl-carousel', get_template_directory_uri() . '/css/owl.carousel.css' );
     wp_enqueue_style( 'edm-school-css-owl-theme', get_template_directory_uri() . '/css/owl.theme.default.css' );
+    wp_enqueue_style( 'edm-school-style', get_template_directory_uri() . '/style.css' );
     wp_enqueue_style( 'edm-school-css-theme', get_template_directory_uri() . '/css/theme.css' );
+    wp_enqueue_style( 'edm-school-css-old-theme', get_template_directory_uri() . '/css/old-theme.css' );
 
     wp_enqueue_script( 'edm-school-youtube-player-api', '//www.youtube.com/player_api', array(), '1', false );
     wp_enqueue_script( 'edm-school-scripts-header', get_template_directory_uri() . '/js/scripts-header.js', array(), '1', false );

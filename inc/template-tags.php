@@ -146,3 +146,18 @@ if ( ! function_exists( 'edm_school_post_thumbnail' ) ) :
 		endif; // End is_singular().
 	}
 endif;
+
+if ( ! function_exists( 'edm_school_the_custom_logo' ) ) :
+    /**
+     * Displays the optional custom logo.
+     *
+     * Does nothing if the custom logo is not available.
+     *
+     * @since Twenty Sixteen 1.2
+     */
+    function edm_school_the_custom_logo() {
+        if ( function_exists( 'the_custom_logo' ) ) {
+            the_custom_logo();
+        }
+    }
+endif;
