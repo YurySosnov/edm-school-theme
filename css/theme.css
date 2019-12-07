@@ -67,6 +67,12 @@ p {
   margin-top: 0;
   margin-bottom: 1rem;
 }
+embed,
+iframe,
+object,
+video {
+  margin: 0;
+}
 .page {
   margin: 0;
 }
@@ -471,9 +477,8 @@ p {
   width: 600px;
   max-width: 100%;
   min-height: 20px;
-  margin: auto;
+  margin: 0 auto;
   border: 2px solid rgba(255, 255, 255, 0.05);
-  margin-bottom: 25px;
   border-radius: 5px;
   padding: 80px 50px;
   color: #fff;
@@ -504,6 +509,12 @@ p {
   box-shadow: 0 0 40px rgba(249, 21, 105, 0.7);
   animation: shadow 2s infinite ease-in-out;
   cursor: pointer;
+}
+.section-big-video .fw-col-xs-12 {
+  padding: 0;
+}
+.section-big-video .fw-col-xs-12 .fw-container-fluid {
+  background-size: cover;
 }
 .section-reviews {
   background-color: #141352;
@@ -1171,7 +1182,7 @@ tb-notification-button__text:after {
 }
 .works-slider .item {
   background-color: #0f0f43;
-  padding: 20px;
+  padding: 0 20px;
 }
 .logos {
   padding: 80px 0;

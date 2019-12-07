@@ -54,12 +54,6 @@ $options = array(
         'desc'  => __('Please select the background CSS gradient', 'fw'),
         'type'  => 'text',
     ),
-
-    'video' => array(
-        'label' => __('Background Video', 'fw'),
-        'desc'  => __('Insert Video URL to embed this video', 'fw'),
-        'type'  => 'text',
-    ),
     'background_video_url' => array(
         'label' => __('Background Video URL', 'fw'),
         'type'  => 'text',

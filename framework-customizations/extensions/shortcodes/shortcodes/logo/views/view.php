@@ -12,7 +12,7 @@ $class = $atts['name'];
 if ( $atts['class'] !== '' ) {
     $class .= ' ' . $atts['class'];
 }
-$src = '/wp-content/themes/edm-school/img/logos/' . $atts['name'] . '.svg';
+$src = get_template_directory_uri() . '/img/logos/' . $atts['name'] . '.svg';
 ?>
 <?php if ( $atts['use_url'] ) : ?>
 <a href="<?= $atts['url'] ;?>">
