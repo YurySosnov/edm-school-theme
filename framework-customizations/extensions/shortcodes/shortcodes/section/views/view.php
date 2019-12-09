@@ -36,7 +36,7 @@ if ( ! empty( $atts['background_video_url'] ) ) {
 	$filetypes          = array( 'mp4' => 'mp4', 'ogv' => 'ogg', 'webm' => 'webm', 'jpg' => 'poster' );
 	$filetype           = array_key_exists( (string) $filetype['ext'], $filetypes ) ? $filetypes[ $filetype['ext'] ] : 'background_video_url';
 	$data_name_attr = version_compare( fw_ext('shortcodes')->manifest->get_version(), '1.3.9', '>=' ) ? 'data-background-options' : 'data-wallpaper-options';
-	$bg_video_data_attr = $data_name_attr.'="' . fw_htmlspecialchars( json_encode( array( 'source' => array( $filetype => $atts['background_video_url'] ) ) ) ) . '"';
+	$bg_video_data_attr = $data_name_attr.'="' . get_template_directory_uri() . fw_htmlspecialchars( json_encode( array( 'source' => array( $filetype => $atts['background_video_url'] ) ) ) ) . '"';
 	$section_extra_classes .= ' background-video';
 }
 
