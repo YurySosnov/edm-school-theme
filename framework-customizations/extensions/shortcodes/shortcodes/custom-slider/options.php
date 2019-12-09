@@ -68,10 +68,20 @@ $options = array(
         'type'         => 'switch',
         'value'        => false
     ),
+    'load_embeded_by_click' => array(
+        'label'        => __('Load Embeded by Click', 'fw'),
+        'type'         => 'switch',
+        'value'        => false
+    ),
     'dots' => array(
         'label'        => __('Dots', 'fw'),
         'type'         => 'switch',
         'value'        => false
+    ),
+    'items' => array(
+        'label'        => __('Items', 'fw'),
+        'type'         => 'text',
+        'value'        => '1'
     ),
     'margin' => array(
         'label'        => __('Margin', 'fw'),
@@ -161,4 +171,5 @@ $options = array(
             'logos' => __('Logos','fw')
         )
     )
+
 );

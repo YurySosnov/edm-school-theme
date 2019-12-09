@@ -77,13 +77,28 @@ if ( !empty( $atts['section_title_padding'] ) ){
 if ( $section_title_styles !== '' ) {
     $section_title_styles = 'style="' . $section_title_styles . '"';
 }
-
+$section_rand_class = 'section--' . rand(100000, 999999);
+$bg_video_url = $atts['background_video_url'];
 ?>
-<section class="fw-main-row<?= esc_attr($section_extra_classes) ?>" <?= $section_style; ?> <?= $bg_video_data_attr; ?>>
+<section class="fw-main-row <?= $section_rand_class; ?><?= esc_attr($section_extra_classes) ?>" <?= $section_style; ?> <?= $bg_video_data_attr; ?>>
     <?php if ( isset( $atts['background_video_url'] ) && $atts['background_video_url'] !== '' ) : ?>
-        <video class="section-background-video"<?= $html_video_parameters; ?><?= $video_styles; ?>>
-            <source src="<?= $atts['background_video_url']; ?>" type="video/mp4">
-        </video>
+        <script>
+            if ($(document).width() > 768) {
+                if (typeof video_loaded === 'undefined') {
+                    var video_loaded = {};
+                }
+                video_loaded['<?= $section_rand_class;?>'] = false;
+                $(function () {
+                    setTimeout(function(){
+                        if (!video_loaded['<?= $section_rand_class;?>']) {
+                            $('.<?= $section_rand_class; ?>').prepend('<video class="section-background-video"<?= $html_video_parameters; ?><?= $video_styles; ?>>' +
+                                '<source src="<?= $bg_video_url; ?>" type="video/mp4"></video>');
+                            video_loaded['<?= $section_rand_class;?>'] = true;
+                        }
+                    },10);
+                });
+            }
+        </script>
     <?php endif; ?>
     <?php if ( $atts['overlay'] ): ?>
         <div class="section-overlay" <?= $overlay_style; ?>></div>

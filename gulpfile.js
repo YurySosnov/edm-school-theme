@@ -12,7 +12,7 @@ const
 
 
 let lessPath = ['./less/theme.less'];
-
+let imgPath = ['img_src/*'];
 const { src, dest } = require('gulp');
 
 function defaultTask(cb) {
@@ -28,6 +28,12 @@ function css() {
         .pipe(livereload({ start: true }));
 }
 
+function img() {
+    return src(imgPath)
+        .pipe(imagemin())
+        .pipe(dest('img_dest'));
+}
+
 function wcss() {
     css();
     livereload.listen();
@@ -36,4 +42,5 @@ function wcss() {
 
 exports.default = defaultTask;
 exports.css = css;
+exports.img = img;
 exports.wcss = wcss;

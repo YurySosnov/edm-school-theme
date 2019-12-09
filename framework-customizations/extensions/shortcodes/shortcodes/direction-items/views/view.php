@@ -6,9 +6,9 @@
  * @var array $atts
  */
 ?>
-<div class="fw-container">
+<div class="fw-row">
     <?php foreach ( fw_akg( 'elements', $atts, array() ) as $el ) : ?>
-        <div class="fw-col-12 fw-col-md-6 fw-col-lg-4">
+        <div class="fw-col-sm-12 fw-col-md-6 fw-col-lg-4">
             <div class="direction-block">
                 <div class="img"<? if ( !empty( $el['image'] ) ) : ?> style="background-image: url('<?php echo $el['image']['url'] ; ?>');" <? endif; ?>>
                     <div class="name"><?php echo $el['text']; ?></div>

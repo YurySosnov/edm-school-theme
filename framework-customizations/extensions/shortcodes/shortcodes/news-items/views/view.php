@@ -8,7 +8,7 @@
 ?>
 <div class="fw-container">
     <?php foreach ( fw_akg( 'elements', $atts, array() ) as $el ) : ?>
-        <a class="fw-col-12 fw-col-md-4" href="<?php echo $el['link']; ?>">
+        <a class="fw-col-sm-12 fw-col-4" href="<?php echo $el['link']; ?>">
             <span class="block">
                 <span class="fw-row">
                     <span class="fw-col-12">

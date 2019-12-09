@@ -88,7 +88,7 @@ $slider_class_js = tpl_convertClassForJQ( $atts['slider_class'] );
     <?php $slider_class_js = '.dj-list-bottom-slider';?>
     <div class="dj-slider-bottom">
         <div class="fw-container">
-            <div class="fw-col-12 fw-col-md-10 fw-order-2 fw-order-md-1">
+            <div class="fw-col-sm-12 fw-col-md-10 fw-order-2 fw-order-md-1">
                 <div class="owl-carousel owl-theme<?= $slider_additional_class; ?>">
                     <?php foreach ( fw_akg( 'slides', $atts, array() ) as $slide ) : ?>
                         <?php $counter++; ?>
@@ -109,7 +109,7 @@ $slider_class_js = tpl_convertClassForJQ( $atts['slider_class'] );
                     <?php endforeach; ?>
                 </div>
             </div>
-            <div class="fw-col-12 fw-col-md-2 fw-order-1 fw-order-md-2 dj-slider-bottom-nav-outer">
+            <div class="fw-col-sm-12 fw-col-md-2 fw-order-1 fw-order-md-2 dj-slider-bottom-nav-outer">
                 <div class="dj-list-alt-prev pink-prev"></div>
                 <div class="dj-list-alt-next pink-next"></div>
             </div>
@@ -123,7 +123,7 @@ $slider_class_js = tpl_convertClassForJQ( $atts['slider_class'] );
             <div class="info">
                 <div class="img"<? if ( !empty( $slide['img'] ) ) : ?> style="background-image: url('<?= $slide['img']['url'] ; ?>');" <? endif; ?>></div>
                 <div class="text">
-                    <p class="name"><strong><?= $slide['name']; ?></strong>, <?= $slide['age']; ?></p>
+                    <p class="name"><strong><?= $slide['name']; ?></strong><?php if (!empty($slide['age']) && $slide['age'] !== '') : ?>, <?= $slide['age']; ?><?php endif; ?></p>
                     <p><?= $slide['text']; ?></p>
                 </div>
             </div>
@@ -136,12 +136,22 @@ $slider_class_js = tpl_convertClassForJQ( $atts['slider_class'] );
         <?php foreach ( fw_akg( 'slides', $atts, array() ) as $slide ) : ?>
             <div class="item">
                 <?php if ( $type === 'audio') : ?>
-                    <?= $slide['audio']; ?>
+                    <?php if ($atts['load_embeded_by_click']) :?>
+                        <div class="audio-block load-embeded-by-click" data-embeded='<?= $slide['audio']; ?>'<? if ( !empty( $slide['img'] ) ) : ?> style="background-image: url('<?= $slide['img']['url'] ; ?>');" <? endif; ?>></div>
+                    <?php else : ?>
+                        <div class="audio-block">
+                            <?= $slide['audio']; ?>
+                        </div>
+                    <?php endif; ?>
                 <?php endif; ?>
                 <?php if ( $type === 'video') : ?>
-                    <div class="video-block">
-                        <?= $slide['video']; ?>
-                    </div>
+                    <?php if ($atts['load_embeded_by_click']) :?>
+                        <div class="video-block load-embeded-by-click" data-embeded='<?= $slide['video']; ?>'<? if ( !empty( $slide['img'] ) ) : ?> style="background-image: url('<?= $slide['img']['url'] ; ?>');" <? endif; ?>></div>
+                    <?php else : ?>
+                        <div class="video-block">
+                            <?= $slide['video']; ?>
+                        </div>
+                    <?php endif; ?>
                 <?php endif; ?>
                 <?php if ( $type === 'default' ) : ?>
                     <div class="slider-img" <? if ( !empty( $slide['img'] ) ) : ?> style="background-image: url('<?= $slide['img']['url'] ; ?>');" <? endif; ?>>
@@ -168,6 +178,7 @@ $slider_class_js = tpl_convertClassForJQ( $atts['slider_class'] );
             loop: <?= tpl_getVar($atts['loop'],'boolean'); ?>,
             dots: <?= tpl_getVar($atts['dots'],'boolean'); ?>,
             margin: <?= tpl_getVar($atts['margin'],'int'); ?>,
+            items: <?= tpl_getVar($atts['items'],'int'); ?>,
             responsiveClass: '<?= $atts['responsiveClass']; ?>',
             URLhashListener: <?= tpl_getVar($atts['URLhashListener'],'boolean'); ?>,
             autoplayHoverPause: <?= tpl_getVar($atts['autoplayHoverPause'],'boolean'); ?>,
@@ -201,7 +212,6 @@ $slider_class_js = tpl_convertClassForJQ( $atts['slider_class'] );
             $('<?= $slider_class_js; ?> .owl-next').trigger('click');
         });
         <?php endif; ?>
-
         <?php if ( $type === 'dj_alt' ) : ?>
         $('.dj-list-alt-prev').click(function() {
             $('<?= $slider_class_js; ?> .owl-prev').trigger('click');
@@ -209,6 +219,15 @@ $slider_class_js = tpl_convertClassForJQ( $atts['slider_class'] );
         $('.dj-list-alt-next').click(function() {
             $('<?= $slider_class_js; ?> .owl-next').trigger('click');
         });
+        <?php endif; ?>
+
+        <?php if ( $atts['load_embeded_by_click'] ) : ?>
+            $('<?= $slider_class_js; ?> .load-embeded-by-click').on('click',function(){
+                if (!$(this).hasClass('loaded')) {
+                    $(this).html($(this).data('embeded'));
+                    $(this).addClass('loaded');
+                }
+            });
         <?php endif; ?>
     });
 </script>

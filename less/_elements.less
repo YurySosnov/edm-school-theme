@@ -34,6 +34,8 @@
                 z-index: 10;
                 position: relative;
                 padding-top: 50px;
+                color: #fff;
+                .font-mns('SemiBold');
             }
             &-number {
                 margin-bottom: 30px;
@@ -50,6 +52,8 @@
                     left: 50%;
                     transform: translate(-50%);
                     color: #3029b3;
+                    line-height: normal;
+                    .font-mns('Black',68px);
                 }
             }
             &-text {
@@ -244,5 +248,30 @@
     }
 }
 
-
+.load-embeded-by-click {
+    cursor: pointer;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    &:before {
+        display: block;
+        position: absolute;
+        content: '';
+        width: 32px;
+        height: 32px;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        background-repeat: no-repeat;
+        background-image: url('../img/icon-white-play.svg');
+        background-position: center;
+        background-size: 32px auto;
+        opacity: .6;
+    }
+    &.loaded {
+        &:before {
+            display: none;
+        }
+    }
+}
 
