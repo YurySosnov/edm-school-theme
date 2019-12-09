@@ -122,4 +122,9 @@ $options = array(
         'label' =>  __( 'StickyDa after', 'fw' ),
         'value' => false
     ),
+    'hide_for_mobile' => array(
+        'type'  => 'switch',
+        'label' =>  __( 'Hide for mobile', 'fw' ),
+        'value' => false
+    ),
 );

@@ -810,6 +810,20 @@ video {
   .section-learning .block {
     text-align: center;
   }
+  .section-big-video .cont {
+    height: 60vw;
+  }
+  .section-big-video .block {
+    padding: 3vw;
+    font-size: 3vw;
+  }
+  .section-big-video .but {
+    width: 20vw;
+    height: 20vw;
+    margin: 3vw auto 0;
+    background-size: cover;
+    background-position: center;
+  }
 }
 .section-top-inner img.logo {
   width: 50%;

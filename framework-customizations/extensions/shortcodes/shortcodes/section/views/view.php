@@ -2,6 +2,8 @@
 	die( 'Forbidden' );
 }
 
+require_once 'Mobile_Detect.php';
+
 $bg_color = '';
 if ( ! empty( $atts['background_color'] ) ) {
 	$bg_color = 'background-color:' . $atts['background_color'] . ';';
@@ -79,44 +81,54 @@ if ( $section_title_styles !== '' ) {
 }
 $section_rand_class = 'section--' . rand(100000, 999999);
 $bg_video_url = $atts['background_video_url'];
-?>
-<section class="fw-main-row <?= $section_rand_class; ?><?= esc_attr($section_extra_classes) ?>" <?= $section_style; ?> <?= $bg_video_data_attr; ?>>
-    <?php if ( isset( $atts['background_video_url'] ) && $atts['background_video_url'] !== '' ) : ?>
-        <script>
-            if ($(document).width() > 768) {
-                if (typeof video_loaded === 'undefined') {
-                    var video_loaded = {};
-                }
-                video_loaded['<?= $section_rand_class;?>'] = false;
-                $(function () {
-                    setTimeout(function(){
-                        if (!video_loaded['<?= $section_rand_class;?>']) {
-                            $('.<?= $section_rand_class; ?>').prepend('<video class="section-background-video"<?= $html_video_parameters; ?><?= $video_styles; ?>>' +
-                                '<source src="<?= $bg_video_url; ?>" type="video/mp4"></video>');
-                            video_loaded['<?= $section_rand_class;?>'] = true;
-                        }
-                    },10);
-                });
-            }
-        </script>
-    <?php endif; ?>
-    <?php if ( $atts['overlay'] ): ?>
-        <div class="section-overlay" <?= $overlay_style; ?>></div>
-    <?php endif; ?>
 
-    <?php if ( $atts['inner_area'] ): ?>
-        <<?= $atts['inner_area_tag']; ?><?= $inner_area_parameters; ?>>
-    <?php endif; ?>
-	<div class="<?= esc_attr($container_class); ?>">
-        <?php if ( $atts['section_title'] !== '' ) : ?>
-        <div class="section-title"<?= $section_title_styles; ?>><?= $atts['section_title']; ?></div>
+$display_section = true;
+if ($atts['hide_for_mobile']) {
+    $detect = new Mobile_Detect;
+    if ( $detect->isMobile() || $detect->isTablet() ) {
+        $display_section = false;
+    }
+}
+?>
+<?php if ( $display_section ) : ?>
+    <section class="fw-main-row <?= $section_rand_class; ?><?= esc_attr($section_extra_classes) ?>" <?= $section_style; ?> <?= $bg_video_data_attr; ?>>
+        <?php if ( isset( $atts['background_video_url'] ) && $atts['background_video_url'] !== '' ) : ?>
+            <script>
+                if ($(document).width() > 768) {
+                    if (typeof video_loaded === 'undefined') {
+                        var video_loaded = {};
+                    }
+                    video_loaded['<?= $section_rand_class;?>'] = false;
+                    $(function () {
+                        setTimeout(function(){
+                            if (!video_loaded['<?= $section_rand_class;?>']) {
+                                $('.<?= $section_rand_class; ?>').prepend('<video class="section-background-video"<?= $html_video_parameters; ?><?= $video_styles; ?>>' +
+                                    '<source src="<?= get_template_directory_uri() . $bg_video_url; ?>" type="video/mp4"></video>');
+                                video_loaded['<?= $section_rand_class;?>'] = true;
+                            }
+                        },10);
+                    });
+                }
+            </script>
         <?php endif; ?>
-		<?= do_shortcode( $content ); ?>
-	</div>
-    <?php if ( $atts['inner_area'] ): ?>
-    </<?= $atts['inner_area_tag']; ?>>
+        <?php if ( $atts['overlay'] ): ?>
+            <div class="section-overlay" <?= $overlay_style; ?>></div>
+        <?php endif; ?>
+
+        <?php if ( $atts['inner_area'] ): ?>
+            <<?= $atts['inner_area_tag']; ?><?= $inner_area_parameters; ?>>
+        <?php endif; ?>
+        <div class="<?= esc_attr($container_class); ?>">
+            <?php if ( $atts['section_title'] !== '' ) : ?>
+            <div class="section-title"<?= $section_title_styles; ?>><?= $atts['section_title']; ?></div>
+            <?php endif; ?>
+            <?= do_shortcode( $content ); ?>
+        </div>
+        <?php if ( $atts['inner_area'] ): ?>
+        </<?= $atts['inner_area_tag']; ?>>
+        <?php endif; ?>
+    </section>
+    <?php if ($atts['stickyda_after']) : ?>
+    <div class="stickyDa"></div>
     <?php endif; ?>
-</section>
-<?php if ($atts['stickyda_after']) : ?>
-<div class="stickyDa"></div>
 <?php endif; ?>
