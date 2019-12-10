@@ -12,8 +12,8 @@
             <?php foreach ( fw_akg( 'elements', $atts, array() ) as $el ) : ?>
                 <li class="nh-anim">
                     <div class="row">
-                        <div class="fw-col-12 fw-col-md-5 fw-col-lg-4 icon-slider"></div>
-                        <div class="fw-col-12 fw-col-md-7 fw-col-lg-8">
+                        <div class="fw-col-md-5 fw-col-lg-4 fw-col-3 icon-slider"></div>
+                        <div class="fw-col-md-7 fw-col-lg-8 fw-col-9">
                             <h3><?= $el['title']; ?></h3>
                             <p>Краткое описание</p>
                         </div>

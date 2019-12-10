@@ -1248,6 +1248,14 @@ dj-slider-top .dj-list-alt-next:hover {
 .load-embeded-by-click.loaded:before {
   display: none;
 }
+@media screen and (max-width: 768px) {
+  .news-holder .news-headlines,
+  .news-holder .news-preview {
+    width: 90%;
+    margin: 0 auto;
+    float: none;
+  }
+}
 .direction-block {
   width: 100%;
   height: 390px;
