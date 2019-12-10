@@ -1256,6 +1256,13 @@ dj-slider-top .dj-list-alt-next:hover {
     float: none;
   }
 }
+@media screen and (max-width: 768px) {
+  .elements-suitable .item,
+  .elements-suitable .item-last {
+    margin: 0 auto 3vw;
+    max-width: 94vw;
+  }
+}
 .direction-block {
   width: 100%;
   height: 390px;
